@@ -1,5 +1,17 @@
 # Website Development with NodeJs
 
+The Trading Economics NPM package provides direct access to our data. It allows you to request millions of rows of economic historical data, to query our real-time economic calendar and to subscribe to updates.
+
+## Installation
+
+### Using GitHub
+
+`
+git clone https://github.com/tradingeconomics/tradingeconomics.git
+cd tradingeconomics/nodejs
+npm i
+`
+
 Front-end
 1. Structure of an HTML page.
 2. 

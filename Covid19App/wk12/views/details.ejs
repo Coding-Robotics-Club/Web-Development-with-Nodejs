@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Details | Covid19 App</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+
+<header>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+		<div class="container">
+			<a class="navbar-brand" href="/">Covid19</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbars">
+				<ul class="navbar-nav me-auto mb-2 mb-sm-0">
+					<li class="nav-item">
+						<a class="nav-link"href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/patients">Patients</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<main class="mt-5">
+	<div class="container">
+		<div class="row mb-3">
+			<div class="col-6">
+				<h3 class="display-5">Details</h3>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col-6">
+				<% if (patient) { %>
+				<div class="card">
+					<div class="card-body">
+						<ul>
+							<li>First name: <%= patient.first_name %></li>
+							<li>Last name: <%= patient.last_name %></li>
+							<li>Date of birth: <%= new Date(patient.birthdate).toLocaleDateString() %></li>
+							<li>Place of vaccination: <%= patient.vaccination_place %></li>
+							<li>Type of vaccine: <%= patient.vaccine_type %></li>
+							<li>Name of vaccine manufacturer: <%= patient.vaccine_manufacturer %></li>
+							<li>Date of Dose 1: <%= new Date(patient.dose_1_date).toLocaleDateString() %></li>
+							<li>Date of Dose 2: <%= new Date(patient.dose_2_date).toLocaleDateString() %></li>
+							<li>Healthcare Professional ID: <%= patient.p_id %></li>
+							<li>Healthcare Fullname: <%= patient.p_name %></li>
+						</ul>
+					</div>
+				</div>
+				<% } else { %>
+				<div class="card">
+					<div class="card-body">
+						<h2>No data found</h2>
+					</div>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			&copy; 2022, Coding & Robotics Club.
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="/assets/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/assets/js/script.js"></script>
+
+</body>
+</html>
