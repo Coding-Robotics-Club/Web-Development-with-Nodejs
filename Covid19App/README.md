@@ -44,3 +44,13 @@ We will also integrate bootstrap framework to style our website.
 [] add footer
 [] add form
 [] add list
+
+
+
+
+[] create basic server to serve index page
+[] create routes to serve different pages
+[] create connection to the database
+[] create models
+[] save and fetch data to and from the database
+[] render data on pages
