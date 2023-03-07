@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Covid19 Vaccination Database</title>
+	<link rel="stylesheet" href="./css/jquery.mobile.min.css"/>
+	<link rel="stylesheet" href="./css/theme-classic.css" />
+	<!-- <link rel="stylesheet" href="./css/jquery-ui.min.css" /> -->
+	<!-- <link rel="stylesheet" href="./css/jquery-ui.theme.min.css" /> -->
+	<link rel="stylesheet" href="./css/myOwn.css"/>
+	<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon"/>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.mobile.js"></script>
+	<!-- <script src="./js/jquery-ui.min.js"></script> -->
+	<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="./js/covid19.js"></script>
+</head>
+<body>
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="home" >
+
+	<div data-role="header" data-position="fixed">
+		<button type="reset" data-icon="delete">Cancel</button>
+		<h1>Covid19 Vaccination Database</h1>
+		<a href="#entries" data-icon="info">info</a>
+	</div><!-- /header -->
+
+	
+	<div role="main" class="ui-content">
+		<h2>Welcome</h2>
+
+		<p>Please enter all the infomation correctly into the correct field provided.</p>
+
+		<h1>Information</h1>
+
+		<!-- Form created here 'two label, two input type and submit button' -->
+		<!-- using POST method on the form, submit button link to function submit_form() in myOwn.js-->
+		<!-- create list -->
+		<form action="/save" id="form" method="post">
+			<fieldset>
+				<div class="ui-field-contain">
+					<label for="firstname">Firstname:</label>
+					<input id="firstname" name="firstname" type="text" placeholder="Firstname"/>
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="lastname">Lastname:</label>
+					<input id="lastname" name="lastname" type="text" placeholder="Lastname"/>
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="age">Age:</label>
+					<input id="age" name="age" type="number" placeholder="Age"/>
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<div class="ui-field-contain">
+					<label for="place_of_vacination">Place of Vaccination</label>
+					<select id="place_of_vacination" name="place_of_vacination">
+						<option value="" selected>Select place of Vaccination</option>
+						<option>Central</option>
+						<option>Eastern Highlands</option>
+						<option>East New Britain</option>
+						<option>East Sepik</option>
+						<option>Enga</option>
+						<option>Gulf</option>
+						<option>Hela</option>
+						<option>Jiwaka</option>
+						<option>Madang</option>
+						<option>Manus</option>
+						<option>Milne Bay</option>
+						<option>Morobe</option>
+						<option>New Ireland</option>
+						<option>Oro</option>
+						<option>Simbu</option>
+						<option>Southern Highlands</option>
+						<option>West New Britain</option>
+						<option>Western</option>
+						<option>West Sepik</option>
+					</select>
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="coords">GPS Coordinates:</label>
+					<div data-type="horizontal">
+						<input type="text" id="coords" name="coords" data-wrapper-class="controlgroup-textinput ui-btn" placeholder="(lat, long)">
+						<button id="btnCoords">Get GPS Coordinates</button>
+					</div>
+				</div>
+				
+				<div class="ui-field-contain">
+					<label for="vaccine_type">Type of vaccine:</label>
+					<select id="vaccine_type" name="vaccine_type" placeholder="Type of vaccine">
+						<option value="" selected>Select vaccine type</option>
+						<option>Johnson & Johnson's Janssen</option>
+						<option>AstraZeneca</option>
+					</select>
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="vaccine_manufacturer">Name of vaccine manufacturer:</label>
+					<select id="vaccine_manufacturer" name="vaccine_manufacturer" placeholder="Name of vaccine manufacturer:">
+						<option value="">Select name of vaccine manufacturer</option>
+						<option>SI of India AZ</option>
+						<option>SI of Europe AZ</option>
+						<option>SI of US AZ</option>
+						<option>J&J of US</option>
+						<option>J&J of India</option>
+					</select>
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="date_of_dose_1">Date of Dose 1:</label>
+					<input id="date_of_dose_1" type="date" data-role="date" data-clear-btn="false" name="date_of_dose_1">
+				</div>
+				<div class="ui-field-contain">
+					<label for="date_of_dose_2">Date of Dose 2:</label>
+					<input id="date_of_dose_2" type="date" data-role="date" data-clear-btn="false" name="date_of_dose_2"/>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<div class="ui-field-contain">
+					<label for="pId">Healthcare professional ID:</label>
+					<input id="pId" name="pId" type="number" placeholder="1111 OR 2222"/>			
+				</div>
+				<br/>
+				<div class="ui-field-contain">
+					<label for="pName">Healthcare full name:</label>
+					<input id="pName" name="pName" type="text" placeholder="John Red OR Mary Green"/>
+				</div>
+				<br/>
+			</fieldset>
+
+			<button type="submit" class="ui-btn ui-btn-b ui-corner-all ui-shadow" data-theme="b">Submit</button>
+			
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="a">
+		<h4>&copy; Christian AUGUSTYN ID#200197 & Phillip Willie ID#200222</h4>
+	</div><!-- /footer -->
+
+</div><!-- /page one -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="entries" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Covid19 Vaccination Database</h1>
+		<!-- Return to home button goes here... -->
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left xui-btn-icon-notext">Back</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Details</h2>
+
+		<br/>
+
+		<!-- create unordered listview to display array data -->
+		<ul data-role="listview" id="patients"></ul>
+	
+	</div>
+
+	<div data-role="footer" data-theme="a">
+		<h4>&copy; Christian AUGUSTYN ID#200197 & Phillip Willie ID#200222</h4>
+	</div><!-- /footer -->
+</div><!-- /page two -->
+
+<div data-demo-html="#map-page" data-demo-js="true" data-demo-css="true"></div>
+
+</body>
+</html>

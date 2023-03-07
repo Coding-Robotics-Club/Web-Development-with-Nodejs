@@ -1,0 +1,11 @@
+Firstname: Lucas
+Lastname: Ginua
+Age: 12
+Place of vaccination: Madang
+GPS Coordinates: ( -5.226649, 145.7912028 )
+Type of vaccine: AstraZeneca
+Name of vaccine manufacturer: SI of Europe AZ
+Date of Dose 1: 2022-05-09
+Date of Dose 2: 2022-05-10
+Healthcare Professional ID: 1111
+Healthcare Fullname: Christian Augustyn

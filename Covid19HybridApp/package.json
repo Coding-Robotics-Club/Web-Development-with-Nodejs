@@ -1,0 +1,24 @@
+{
+  "name": "covid19app",
+  "version": "1.0.0",
+  "description": "Covid19 Vaccination Database",
+  "main": "./server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Christian AUGUSTYN ID#200197 & Phillip Willie ID#200222",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-secure-headers": "^1.0.0",
+    "helmet": "^5.0.2",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "serve-favicon": "^2.5.0"
+  }
+}
