@@ -6,7 +6,6 @@ A website is a collection of webpages or simply pages
 	- head
 	- body
 
-
 the utf-8 is the encoding that specifies that this document is an HTML so browsers will know `<meta charset="utf-8">`
 
 Viewport tells browser to scale to fit small devices like mobile phones
@@ -23,3 +22,11 @@ We will also integrate bootstrap framework to style our website.
 [] add footer
 [] add form
 [] add list
+
+
+[] create basic server to serve index page
+[] create routes to serve different pages
+[] create connection to the database
+[] create models
+[] save and fetch data to and from the database
+[] render data on pages
