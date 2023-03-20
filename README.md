@@ -5,9 +5,9 @@ Before you get started developing your web application. Make sure your machine m
 
 ### Prerequesites
 * MongoDB version >= 4.
-[Download here](https://git-scm.com/download/win)
+[Download here](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-6.0.5-signed.msi)
 * NodeJS version >= 14.
-[Download here](https://git-scm.com/download/win)
+[Download here](https://nodejs.org/en/download)
 * Git
 [Download here](https://git-scm.com/download/win)
 
