@@ -6,11 +6,11 @@ The Trading Economics NPM package provides direct access to our data. It allows 
 
 ### Using GitHub
 
-`
-git clone https://github.com/tradingeconomics/tradingeconomics.git
-cd tradingeconomics/nodejs
+```
+git clone https://github.com/Coding-Robotics-Club/Web-Development-with-Nodejs.git
+cd Web-Development-with-Nodejs/Covid19App
 npm i
-`
+```
 
 Front-end
 1. Structure of an HTML page.
